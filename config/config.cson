@@ -1,0 +1,25 @@
+webServer:
+  port: 3000
+logger:
+  colorize: true
+  timestamp: true
+  handleExceptions: false
+  exitOnError: true
+  level: 'silly'
+bundles:
+  private: [
+    'modules/private/server'
+    'modules/private/!(routes)'
+    'modules/private/routes'
+  ]
+environments:
+  production:
+    verbose: false
+    logger:
+      handleExceptions: true
+      exitOnError: false
+      level: 'warn'
+  development:
+    verbose: true
+  test:
+    verbose: true
