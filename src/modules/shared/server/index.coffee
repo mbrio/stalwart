@@ -7,12 +7,6 @@ exports = module.exports = (bijous, services, done) ->
 
   server = http.createServer app
 
-  bijous.on 'done', ->
-    server.listen app.get('port'), (err) ->
-      throw err if err
-      bijous.logger.silly 'Web server is now listening on port %d',
-        app.get 'port'
-
   done null,
     app: app
     express: express

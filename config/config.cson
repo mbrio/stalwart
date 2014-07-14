@@ -7,11 +7,13 @@ logger:
   exitOnError: true
   level: 'silly'
 bundles:
-  private: [
-    'modules/private/server'
-    'modules/private/!(routes)'
-    'modules/private/routes'
-  ]
+  server:
+    private: [
+      'modules/shared/server'
+      'modules/shared/*'
+      'modules/private/!(routes)'
+      'modules/private/routes'
+    ]
 environments:
   production:
     verbose: false
