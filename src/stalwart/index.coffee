@@ -1,0 +1,1 @@
+exports.Stalwart = require './stalwart'
